@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html ng-app="myNoteApp">
+<head>
+    <title></title>
+    <script src="scripts/angularv1.2.23.js"></script>
+    <script src="scripts/app/myapp.js"></script>
+</head>
+<body>
+    <div ng-controller="myNoteCtrl" style="text-align:center">
+        <div style="text-align:center">
+            <h2>Calculator client - AngularJS</h2>
+            <!-- Number type is not supported in IE9 and prior versions -->
+            Please enter Value1 :   <input type="number" id="txtValue1" ng-model="Value1" min="1" max="100"><br><br>
+            Please enter Value2 :   <input type="number" id="txtValue2" ng-model="Value2" min="1" max="100"><br /><br>
+            Result from Math API Service : <input type="text" id="txtResult" ng-model="APIResult" disabled /><br /><br>
+            <input type="button" value="Add" id="btnAdd" ng-click="myclick('Add')">
+            <input type="button" value="Substract" id="btnMinus" ng-click="myclick('Substract')">
+            <input type="button" value="Multiply" id="btnMultiply" ng-click="myclick('Multiply')">
+            <input type="button" value="Divide" id="btnDivide" ng-click="myclick('Divide')">
+
+        </div>
+        <h2>My Note</h2>
+        <p><textarea ng-model="message" cols="40" rows="10"></textarea></p>
+        <p>
+            <button ng-click="save()">Save</button>
+            <button ng-click="clear()">Clear</button>
+        </p>
+        <p>Number of characters left: <span ng-bind="left()"></span></p>
+    </div>
+
+</body>
+</html>
